@@ -13,4 +13,15 @@ router.get('/list', async (req, res) => {
     }
 });
 
+router.get('/delete/:id', async(req , res) => {
+    try {
+
+        const {id} = req.params
+        await pool.query('DELETE FROM personas WHERE id = ?', {id});
+        res.redirect('/list');
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+});
+
 export default router;
