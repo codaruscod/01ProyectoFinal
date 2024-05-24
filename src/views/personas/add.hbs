@@ -6,7 +6,7 @@
                     <h3 class="text-uppercase"> Crear nueva persona</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/add" method="post">
+                    <form action="/add/{{persona.id}}" method="post">
                         <div class="input-group mt-2">
                             <label for="name" class="input-group-text"> Nombre Persona </label>
                             <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Cristhian Galvis" autofocus required >
