@@ -3,26 +3,45 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase"> Editar una persona</h3>
+                    <h3 class="text-uppercase"> Editar un juguete </h3>
                 </div>
                 <div class="card-body">
-                    <form action="/edit/{{persona.id}}" method="post">
+                    <form action="/edit/{{persona.id}}" method="post"  enctype="multipart/form-data">
+
                         <div class="input-group mt-2">
-                            <label for="name" class="input-group-text"> Nombre Persona </label>
-                            <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Cristhian Galvis" value="{{persona.name}}" autofocus required >
+                            <label for="name" class="input-group-text"> Nombre juguete </label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Cristhian David" value="{{persona.name}}" autofocus required >
                         </div>
+
                         <div class="input-group mt-2">
-                            <label for="lastname" class="input-group-text"> apellido Persona </label>
-                            <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Ejemplo: Cristhian Galvis" value="{{persona.lastname}}"  autofocus required >
+                            <label for="proveedor" class="input-group-text"> proveedor </label>
+                            <input class="form-control" type="text" name="proveedor" id="proveedor" placeholder="Ejemplo: Galvis Cardona" value="{{persona.proveedor}}" required >
                         </div>
+
                         <div class="input-group mt-2">
-                            <label for="age" class="input-group-text">Edad </label>
-                            <input class="form-control" type="number" name="age" id="age" placeholder="Ejemplo: 0" value="{{persona.age}}" autofocus required >
+                            <label for="cantidad" class="input-group-text"> Cantidad recibida </label>
+                            <input class="form-control" type="number" name="cantidad" id="cantidad" placeholder="0" value="{{persona.cantidad}}" required >
                         </div>
+
+                        <div class="input-group mt-2">
+                            <label for="observacion" class="input-group-text"> Observacion </label>
+                            <input class="form-control" type="text" name="observacion" id="observacion" value="{{persona.observacion}}" placeholder="Escriba una observacion" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <input class="form-control" type="file" name="file" id="file">
+                        </div>
+
+                        {{#if persona.imagen}}
+                            <div class="input-group mt-2">
+                                <img src="/uploads/{{persona.imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
+                            </div>
+                        {{/if}}
 
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-success"> Actualizar </button>
                         </div>
+
                     </form>
                 </div>
             </div>

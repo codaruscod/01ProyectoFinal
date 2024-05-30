@@ -3,26 +3,39 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase"> Crear nueva persona</h3>
+                    <h3 class="text-uppercase"> Agregar nuevo juguete</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/add/{{persona.id}}" method="post">
+                    <form action="/add" method="post" enctype="multipart/form-data">
+
                         <div class="input-group mt-2">
-                            <label for="name" class="input-group-text"> Nombre Persona </label>
-                            <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Cristhian Galvis" autofocus required >
+                            <label for="name" class="input-group-text"> Nombre Juguete </label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: power ranger" autofocus required >
                         </div>
+
                         <div class="input-group mt-2">
-                            <label for="lastname" class="input-group-text"> apellido Persona </label>
-                            <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Ejemplo: Cristhian Galvis" autofocus required >
+                            <label for="proveedor" class="input-group-text"> Proveedor </label>
+                            <input class="form-control" type="text" name="proveedor" id="proveedor" placeholder="Ejemplo: Matel, lego"  required >
                         </div>
+
                         <div class="input-group mt-2">
-                            <label for="age" class="input-group-text">Edad </label>
-                            <input class="form-control" type="number" name="age" id="age" placeholder="Ejemplo: 0" autofocus required >
+                            <label for="cantidad" class="input-group-text"> cantidad </label>
+                            <input class="form-control" type="number" name="cantidad" id="cantidad" placeholder="0" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="observacion" class="input-group-text"> Observacion </label>
+                            <input class="form-control" type="text" name="observacion" id="observacion" placeholder="Escriba una observacion" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <input class="form-control" type="file" name="file" id="file">
                         </div>
 
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-success"> Crear </button>
                         </div>
+
                     </form>
                 </div>
             </div>
