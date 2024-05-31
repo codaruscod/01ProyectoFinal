@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2"> Nuestras subscripciones</h3>
+
+        {{#if sub}}
+
+            <table class="table text-center">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col" class="col-4"> subscripcion  </th>
+                        <th scope="col"> descripcion  </th>
+                        <th scope="col"> precio     </th>
+                        <th scope="col"> Acciones   </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{#each sub}}
+                        <tr>
+                            <td> {{sub}} </td>
+                            <td> {{description}} </td>
+                            <td> {{price}} </td>
+                            <td> 
+                                <div class="btn-group">
+                                    <a href="/editsub/{{id}}" class="btn btn-warning p-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <a href="/delete/{{id}}" class="btn btn-danger p-2">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+        {{else}}
+
+            <div class="card text-center mx-auto">
+                <div class="card-header">
+                    <h3> Debes agregar una subscripcion</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas agregar un tipo de subscripcion</p>
+                    <a href="/addsub" class="btn btn-primary"> Ir a crear</a>
+                </div>
+            </div>
+
+        {{/if}}
+
+    </div>
+</div>

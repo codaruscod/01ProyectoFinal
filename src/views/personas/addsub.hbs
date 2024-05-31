@@ -1,0 +1,35 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Agregar nueva subscripcion</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/addsub" method="post" enctype="multipart/form-data">
+
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text"> Nombre subscripcion </label>
+                            <input class="form-control" type="text" name="sub" id="sub" placeholder="Ejemplo: basica, pemium" autofocus required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="proveedor" class="input-group-text"> descripcion </label>
+                            <input class="form-control" type="text" name="description" id="description" placeholder="Ejemplo: lo que incluye"  required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="cantidad" class="input-group-text"> Precio </label>
+                            <input class="form-control" type="number" name="price" id="price" placeholder="0000" required >
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success"> Crear </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
