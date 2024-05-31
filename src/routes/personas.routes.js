@@ -16,6 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
+router.get('/quienes-somos', (req, res) => {
+    res.render('quienes-somos');
+});
+
 router.get('/add', (req, res) => {
     res.render('personas/add')
 });
